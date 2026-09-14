@@ -1,0 +1,101 @@
+{
+  "built_at_utc": "2026-09-14T12:43:24+00:00",
+  "label_order": [
+    "sadness",
+    "joy",
+    "love",
+    "anger",
+    "fear",
+    "surprise"
+  ],
+  "decisions": {
+    "stopwords_removed": false,
+    "stemming_or_lemmatisation": false,
+    "original_text_preserved": true,
+    "exact_duplicates_removed_within_split": true,
+    "train_rows_leaking_into_val_or_test_removed": true,
+    "official_split_boundaries_respected": true
+  },
+  "splits": {
+    "train": {
+      "rows_in": 16000,
+      "rows_expected_from_source": 16000,
+      "dropped_empty_after_cleaning": 0,
+      "dropped_exact_duplicates": 1,
+      "pct_dropped_at_clean_stage": 0.01,
+      "dropped_leaking_into_heldout": 16,
+      "rows_out": 15983,
+      "class_counts": {
+        "anger": 2159,
+        "fear": 1934,
+        "joy": 5356,
+        "love": 1298,
+        "sadness": 4665,
+        "surprise": 571
+      },
+      "class_share": {
+        "anger": 0.1351,
+        "fear": 0.121,
+        "joy": 0.3351,
+        "love": 0.0812,
+        "sadness": 0.2919,
+        "surprise": 0.0357
+      },
+      "median_words": 17,
+      "path": "data/processed/train.csv"
+    },
+    "validation": {
+      "rows_in": 2000,
+      "rows_expected_from_source": 2000,
+      "dropped_empty_after_cleaning": 0,
+      "dropped_exact_duplicates": 0,
+      "pct_dropped_at_clean_stage": 0.0,
+      "rows_out": 2000,
+      "class_counts": {
+        "anger": 275,
+        "fear": 212,
+        "joy": 704,
+        "love": 178,
+        "sadness": 550,
+        "surprise": 81
+      },
+      "class_share": {
+        "anger": 0.1375,
+        "fear": 0.106,
+        "joy": 0.352,
+        "love": 0.089,
+        "sadness": 0.275,
+        "surprise": 0.0405
+      },
+      "median_words": 17,
+      "path": "data/processed/validation.csv"
+    },
+    "test": {
+      "rows_in": 2000,
+      "rows_expected_from_source": 2000,
+      "dropped_empty_after_cleaning": 0,
+      "dropped_exact_duplicates": 0,
+      "pct_dropped_at_clean_stage": 0.0,
+      "rows_out": 2000,
+      "class_counts": {
+        "anger": 275,
+        "fear": 224,
+        "joy": 695,
+        "love": 159,
+        "sadness": 581,
+        "surprise": 66
+      },
+      "class_share": {
+        "anger": 0.1375,
+        "fear": 0.112,
+        "joy": 0.3475,
+        "love": 0.0795,
+        "sadness": 0.2905,
+        "surprise": 0.033
+      },
+      "median_words": 17,
+      "path": "data/processed/test.csv"
+    }
+  },
+  "validation_test_overlap_remaining": 3
+}
