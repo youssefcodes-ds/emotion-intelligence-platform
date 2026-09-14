@@ -1,0 +1,7 @@
+label_name,n_train,size_rank,pct_of_train,times_smaller_than_majority
+joy,5356,1,33.51,1.0
+sadness,4665,2,29.19,1.15
+anger,2159,3,13.51,2.48
+fear,1934,4,12.1,2.77
+love,1298,5,8.12,4.13
+surprise,571,6,3.57,9.38

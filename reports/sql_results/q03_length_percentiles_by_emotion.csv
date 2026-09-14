@@ -1,0 +1,7 @@
+label_name,n_messages,p50_words,p90_words,max_words
+love,1635,19,35,63
+anger,2709,17,34,62
+joy,6755,17,34,64
+surprise,718,17,34,61
+fear,2370,16,33,60
+sadness,5796,16,33,66

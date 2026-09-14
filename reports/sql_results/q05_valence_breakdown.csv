@@ -1,0 +1,10 @@
+split,valence,n_messages,avg_words
+test,negative,1080,18.9
+test,positive,854,19.4
+test,ambiguous,66,19.8
+train,negative,8758,18.7
+train,positive,6654,19.7
+train,ambiguous,571,20.0
+validation,negative,1037,18.5
+validation,positive,882,19.4
+validation,ambiguous,81,17.9

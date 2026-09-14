@@ -1,0 +1,7 @@
+label_name,valence,n_messages,n_with_negation,pct_with_negation
+anger,negative,2709,699,25.8
+sadness,negative,5796,1401,24.17
+love,positive,1635,370,22.63
+fear,negative,2370,504,21.27
+joy,positive,6755,1423,21.07
+surprise,ambiguous,718,148,20.61
