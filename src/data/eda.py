@@ -1,11 +1,5 @@
 """Exploratory data analysis: figures + written report.
 
-Covers the three required levels:
-
-* univariate  - class counts, message length, vocabulary
-* bivariate   - length vs emotion, negation vs emotion, distinctive tokens
-* target      - split consistency, class separability, predicted confusions
-
 Everything is regenerated from ``data/processed/`` so no figure in the report is
 a one-off screenshot that nobody can reproduce.
 
