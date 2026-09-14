@@ -2,7 +2,7 @@
 
 Creates ``data/emotion.db`` from ``sql/schema.sql`` and loads the processed
 splits into the ``messages`` table. The prediction, topic and log tables are
-created empty - Members 2, 3 and 4 write into them.
+created empty
 
 Run from the project root::
 

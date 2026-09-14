@@ -1,16 +1,14 @@
 -- ============================================================================
 -- Analytical queries
 --
--- 14 queries. Requirement is "at least 10 meaningful analytical queries;
--- include JOIN, CTE and window function where applicable".
+-- 14 queries.
 --
 --   JOIN             : Q1, Q4, Q5, Q6, Q9, Q10, Q11, Q12, Q13, Q14
 --   CTE (WITH)       : Q3, Q7, Q8, Q9, Q10, Q11, Q12, Q14
 --   Window function  : Q3, Q6, Q7, Q8, Q12, Q14
 --
 -- Queries 9-14 read the predictions / topics / logs tables and return nothing
--- until Members 2, 3 and 4 populate them. That is expected - the schema is
--- designed ahead of the data it will hold.
+--  
 --
 -- Each query is delimited by a "-- name:" comment so run_queries.py can split
 -- this file and export one CSV per query.
@@ -18,7 +16,7 @@
 
 
 -- name: q01_class_distribution_by_split
--- Class balance per split. The headline fact of the whole project.
+-- Class balance per split.
 SELECT
     m.split,
     e.label_name,

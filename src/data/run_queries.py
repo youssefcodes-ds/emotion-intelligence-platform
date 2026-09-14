@@ -1,8 +1,6 @@
 """Execute every query in sql/queries.sql and export the results.
 
-Produces ``reports/sql_results/<query_name>.csv`` plus a markdown summary. That
-directory is the evidence for the "SQL file + screenshots/results" requirement,
-and it is reproducible rather than a folder of screenshots.
+Produces ``reports/sql_results/<query_name>.csv`` plus a markdown summary. 
 
 Run from the project root::
 
