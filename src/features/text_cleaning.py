@@ -6,11 +6,8 @@ removes noise.
 
 What this module does NOT do, on purpose:
 
-* No stopword removal. "not", "no", "but" carry emotion. Member 2 can drop
-  stopwords inside his own TfidfVectorizer if an experiment justifies it - that
-  is a modelling choice, not a data-engineering one, and baking it into the
-  shared artifact would force it on everybody.
-* No stemming or lemmatising, for the same reason.
+* No stopword removal. "not", "no", "but" carry emotion. Data Modeling will decide that
+* No stemming or lemmatising, for the same reason
 * Nothing irreversible. The original text is always kept alongside the cleaned
   version so the transformer track can use raw input.
 """
