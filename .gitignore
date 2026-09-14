@@ -1,0 +1,40 @@
+# ---- data & artifacts (never commit) ----
+data/**
+!data/**/.gitkeep
+!data/README.md
+*.db
+*.sqlite
+*.sqlite3
+
+models/**
+!models/.gitkeep
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.bin
+*.onnx
+
+# ---- environment ----
+.env
+.venv/
+venv/
+env/
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- editors / os ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ---- misc ----
+*.log
+mlruns/
+.streamlit/secrets.toml
