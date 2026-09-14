@@ -1,0 +1,63 @@
+<h2>Classical ML Model Comparison</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>N-gram</th>
+      <th>Model</th>
+      <th>Accuracy</th>
+      <th>Macro F1</th>
+      <th>Weighted F1</th>
+      <th>Best Threshold (joy)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>unigrams</td>
+      <td>LinearSVM</td>
+      <td>0.8355</td>
+      <td>0.7752</td>
+      <td>0.8339</td>
+      <td>0.1000</td>
+    </tr>
+    <tr>
+      <td>bigrams</td>
+      <td>LinearSVM</td>
+      <td>0.8220</td>
+      <td>0.7373</td>
+      <td>0.8177</td>
+      <td>0.1000</td>
+    </tr>
+    <tr>
+      <td>unigrams</td>
+      <td>LogisticRegression</td>
+      <td>0.8205</td>
+      <td>0.7788</td>
+      <td>0.8217</td>
+      <td>0.1000</td>
+    </tr>
+    <tr>
+      <td>trigrams</td>
+      <td>LinearSVM</td>
+      <td>0.8150</td>
+      <td>0.7388</td>
+      <td>0.8123</td>
+      <td>0.5000</td>
+    </tr>
+    <tr>
+      <td>bigrams</td>
+      <td>LogisticRegression</td>
+      <td>0.8120</td>
+      <td>0.7691</td>
+      <td>0.8129</td>
+      <td>0.1000</td>
+    </tr>
+    <tr>
+      <td>trigrams</td>
+      <td>LogisticRegression</td>
+      <td>0.8045</td>
+      <td>0.7605</td>
+      <td>0.8052</td>
+      <td>0.1000</td>
+    </tr>
+  </tbody>
+</table>
