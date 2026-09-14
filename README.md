@@ -68,7 +68,7 @@ reports/        EDA report, data dictionary, figures, SQL results
 
 | Document | Path |
 |----------|------|
-| Handoff notes | `reports/HANDOFF.md` |
+| Handoff notes | `reports/HANDOFF from YOUSSEF.md` |
 | EDA report | `reports/eda_report.md` |
 | Data dictionary | `reports/data_dictionary.md` |
 | SQL query results | `reports/sql_results.md` |
