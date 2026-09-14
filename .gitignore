@@ -1,12 +1,32 @@
-# ---- data & artifacts (never commit) ----
-data/**
-!data/**/.gitkeep
+# ---- data ----
+# Rule: raw data stays out (regenerable in one minute via src/data/ingest.py).
+# The processed splits DO get committed - they are ~3 MB and every member must
+# train and evaluate on the exact same rows. Git cannot un-ignore a file inside
+# an ignored directory, so each level is opened up explicitly.
+data/*
 !data/README.md
+
+!data/raw/
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/raw_manifest.json
+
+!data/interim/
+data/interim/*
+!data/interim/.gitkeep
+
+!data/processed/
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/*.csv
+!data/processed/*.json
+
 *.db
 *.sqlite
 *.sqlite3
 
-models/**
+# ---- model artifacts ----
+models/*
 !models/.gitkeep
 *.pkl
 *.joblib

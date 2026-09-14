@@ -1,0 +1,70 @@
+{
+  "dataset": "dair-ai/emotion",
+  "configuration": "split",
+  "source_used": "huggingface-parquet",
+  "downloaded_at_utc": "2026-09-14T12:32:44+00:00",
+  "label_order": [
+    "sadness",
+    "joy",
+    "love",
+    "anger",
+    "fear",
+    "surprise"
+  ],
+  "files": {
+    "train": {
+      "path": "data/raw/train.csv",
+      "rows": 16000,
+      "columns": [
+        "text",
+        "label",
+        "label_name"
+      ],
+      "class_counts": {
+        "anger": 2159,
+        "fear": 1937,
+        "joy": 5362,
+        "love": 1304,
+        "sadness": 4666,
+        "surprise": 572
+      },
+      "sha256": "890f027b34fc18a2e8ff30ce16fcfdfda50e1bada8299713df0d27fe5a70479f"
+    },
+    "validation": {
+      "path": "data/raw/validation.csv",
+      "rows": 2000,
+      "columns": [
+        "text",
+        "label",
+        "label_name"
+      ],
+      "class_counts": {
+        "anger": 275,
+        "fear": 212,
+        "joy": 704,
+        "love": 178,
+        "sadness": 550,
+        "surprise": 81
+      },
+      "sha256": "7e921cf0b061fe2cfa39b07560c6216ae27c02fbd55b0500b216c7bf45b6edc8"
+    },
+    "test": {
+      "path": "data/raw/test.csv",
+      "rows": 2000,
+      "columns": [
+        "text",
+        "label",
+        "label_name"
+      ],
+      "class_counts": {
+        "anger": 275,
+        "fear": 224,
+        "joy": 695,
+        "love": 159,
+        "sadness": 581,
+        "surprise": 66
+      },
+      "sha256": "07ab219f591796c87b5c78d393aa5e9880ef82fd6f11d11095b9bbedc0498c96"
+    }
+  }
+}
