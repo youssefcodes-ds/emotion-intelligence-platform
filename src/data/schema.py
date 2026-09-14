@@ -1,8 +1,6 @@
 """Dataset contract: label encoding and expected shape.
 
-This is the single source of truth for the label mapping. Members 2, 3 and 4
-must import from here rather than re-typing the list, otherwise a silent
-re-ordering will make every confusion matrix wrong.
+This is the single source of truth for the label mapping.
 
 The order below is the official ClassLabel order of `dair-ai/emotion` and must
 not be changed.
