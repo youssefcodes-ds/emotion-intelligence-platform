@@ -1,4 +1,4 @@
-# Handoff — Member 1 to Members 2, 3 and 4
+# Handoff 
 
 ## What is ready
 
