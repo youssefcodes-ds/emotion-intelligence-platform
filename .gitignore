@@ -58,3 +58,4 @@ Thumbs.db
 *.log
 mlruns/
 .streamlit/secrets.toml
+Emotion_Intelligence_env/
