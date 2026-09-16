@@ -1,0 +1,18 @@
+# Optional convenience wrapper around the Dockerfile.
+#
+# Run:   docker compose up --build
+# Stop:  docker compose down
+#
+# Same result as `docker build` + `docker run`, just one command and
+# automatic restart if the container crashes.
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      # Mount models/ read-only so updating a model file doesn't require
+      # a full image rebuild during development.
+      - ./models:/app/models:ro
+    restart: unless-stopped
