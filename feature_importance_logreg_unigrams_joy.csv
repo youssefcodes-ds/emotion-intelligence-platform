@@ -1,0 +1,31 @@
+class,feature,coefficient,direction,rank
+surprise,impressed,10.511343987112312,positive,1
+surprise,amazed,10.343414216641902,positive,2
+surprise,surprised,10.018585163138553,positive,3
+surprise,curious,9.870411374846347,positive,4
+surprise,shocked,9.516944447948717,positive,5
+surprise,funny,9.375411258496811,positive,6
+surprise,weird,7.870233079515481,positive,7
+surprise,dazed,7.86076452279945,positive,8
+surprise,overwhelmed,7.741683880907849,positive,9
+surprise,strange,7.714528833495024,positive,10
+surprise,amazing,7.597668506835861,positive,11
+surprise,stunned,6.685026818594408,positive,12
+surprise,dazed and,3.0306802413934832,positive,13
+surprise,impressed with,2.8310769696040343,positive,14
+surprise,feel amazed,2.6833041442702363,positive,15
+surprise,liked,-1.0750271342341484,negative,1
+surprise,before,-1.0741033123952255,negative,2
+surprise,to feel,-1.0603417905004289,negative,3
+surprise,sweet,-1.0520630430598845,negative,4
+surprise,blessed,-1.0452133263291663,negative,5
+surprise,supporting,-1.037840890035147,negative,6
+surprise,and that,-1.0119174150324162,negative,7
+surprise,feel that,-1.0113021409003946,negative,8
+surprise,feel so,-0.9405153214444041,negative,9
+surprise,more,-0.9201971684760093,negative,10
+surprise,agitated,-0.9134125020443655,negative,11
+surprise,your,-0.9095105114400598,negative,12
+surprise,had,-0.8968923822104561,negative,13
+surprise,lovely,-0.895361230143916,negative,14
+surprise,accepted,-0.8869044393705497,negative,15
