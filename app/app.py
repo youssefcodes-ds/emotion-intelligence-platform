@@ -8,9 +8,12 @@ import numpy as np
 from pathlib import Path
 import sys
 
-# Add project root to path
-project_root = Path(__file__).parent.parent
-sys.path.insert(0, str(project_root))
+# Add project root and app directory to Python path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+APP_DIR = Path(__file__).resolve().parent
+
+sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(APP_DIR))
 
 # Page config
 st.set_page_config(
@@ -80,13 +83,12 @@ with st.sidebar:
         else:
             st.warning("⚠ No Models")
 
-# Load models function
 @st.cache_resource
 def load_models():
     """Load models with caching"""
     try:
-        from app.utils.model_loader import ModelLoader
-        loader = ModelLoader(model_dir="models")
+        from utils.model_loader import ModelLoader
+        loader = ModelLoader(model_dir=str(PROJECT_ROOT / "models"))
         return loader
     except Exception as e:
         st.error(f"Error loading models: {str(e)}")
@@ -231,7 +233,7 @@ elif page == "💬 Single Prediction":
                     else:
                         try:
                             with st.spinner("Processing..."):
-                                from app.utils.inference import predict_single
+                                from utils.inference import predict_single
                                 
                                 # Map display name to model type
                                 model_type_map = {
@@ -319,7 +321,7 @@ elif page == "📊 Batch Inference":
                 if st.button("🚀 Process All Messages", use_container_width=True, key="batch_predict"):
                     try:
                         with st.spinner(f"Processing {len(df)} messages..."):
-                            from app.utils.inference import predict_batch
+                            from utils.inference import predict_batch
                             
                             # Map display name to model type
                             model_type_map = {
