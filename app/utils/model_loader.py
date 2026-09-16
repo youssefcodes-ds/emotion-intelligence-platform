@@ -116,7 +116,8 @@ class ModelLoader:
         
         # Predict
         try:
-            predictions = model.predict(np.array([text]), verbose=0)
+            input_tensor = tf.constant([str(text)], dtype=tf.string)
+            predictions = model.predict(input_tensor, verbose=0)
             probs = predictions[0]
             class_idx = np.argmax(probs)
             confidence = float(probs[class_idx])
