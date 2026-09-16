@@ -1,0 +1,31 @@
+class,feature,coefficient,direction,rank
+anger,greedy,5.215856386585216,positive,1
+anger,distracted,5.185538638855868,positive,2
+anger,dangerous,5.119874664642815,positive,3
+anger,rude,5.081045449870084,positive,4
+anger,offended,4.997317997540904,positive,5
+anger,stubborn,4.942742619282726,positive,6
+anger,bitter,4.787535614230671,positive,7
+anger,dissatisfied,4.783506723335381,positive,8
+anger,wronged,4.718600607454482,positive,9
+anger,petty,4.647047249892317,positive,10
+anger,bothered,4.641346662442253,positive,11
+anger,rebellious,4.632819618457482,positive,12
+anger,violent,4.620488401783771,positive,13
+anger,cranky,4.530300440421682,positive,14
+anger,fucked,4.485315840976618,positive,15
+anger,paranoid,-1.97656539847133,negative,1
+anger,shamed,-1.9032355156541323,negative,2
+anger,and see,-1.732166021874033,negative,3
+anger,sexual,-1.724260460620548,negative,4
+anger,melancholy,-1.69883011652874,negative,5
+anger,and frustrated,-1.6638810333520466,negative,6
+anger,disturbed,-1.5931560753962302,negative,7
+anger,feel helpless,-1.5628953004051962,negative,8
+anger,shy,-1.560939303765872,negative,9
+anger,dull,-1.517475472542545,negative,10
+anger,heartbroken,-1.5023872247129544,negative,11
+anger,emotional,-1.4959845357157533,negative,12
+anger,helpless,-1.4898398732855673,negative,13
+anger,shaken,-1.488391029674741,negative,14
+anger,overwhelmed,-1.4864268041266138,negative,15
