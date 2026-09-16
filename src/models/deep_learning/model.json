@@ -1,0 +1,68 @@
+{
+    "model_name": "emotion_lstm_classifier",
+    "version": "1.0.0",
+    "task": "text_emotion_classification",
+    "framework": "tensorflow.keras",
+    "model_file": "lstm_model.keras",
+    "model_path_in_repo": "src/models/deep_learning/lstm_model.keras",
+    "description": "LSTM-based deep learning model for classifying short text into one of 6 emotions.",
+    "input": {
+        "type": "string",
+        "description": "Raw or lightly cleaned text. The saved model contains a TextVectorization layer, so raw text can be passed directly.",
+        "example": "i am feeling really anxious about tomorrow"
+    },
+    "output": {
+        "type": "array<float>",
+        "length": 6,
+        "description": "Softmax probability distribution over the 6 emotion classes. Predicted class is the index with the highest probability."
+    },
+    "labels": {
+        "0": "sadness",
+        "1": "joy",
+        "2": "love",
+        "3": "anger",
+        "4": "fear",
+        "5": "surprise"
+    },
+    "preprocessing": {
+        "vectorizer_type": "tf.keras.layers.TextVectorization",
+        "max_tokens": 10000,
+        "output_mode": "int",
+        "sequence_length": 100,
+        "note": "The TextVectorization layer is embedded in the saved .keras model, so no separate tokenizer file is needed."
+    },
+    "architecture": {
+        "layers": [
+            "TextVectorization",
+            "Embedding(input_dim=10000, output_dim=64, mask_zero=True)",
+            "LSTM(64)",
+            "Dense(64, activation=relu)",
+            "Dropout(0.3)",
+            "Dense(6, activation=softmax)"
+        ],
+        "total_params": 677574
+    },
+    "training": {
+        "optimizer": "adam",
+        "loss": "sparse_categorical_crossentropy",
+        "epochs_max": 15,
+        "callbacks": [
+            "EarlyStopping(monitor=val_loss, patience=2, restore_best_weights=True)",
+            "ReduceLROnPlateau(monitor=val_loss, factor=0.5, patience=1, min_lr=1e-6)"
+        ],
+        "train_size": 15983,
+        "validation_size": 2000,
+        "test_size": 2000
+    },
+    "performance": {
+        "test_accuracy": 0.9015,
+        "test_loss": 0.3162
+    },
+    "inference_example_python": "import tensorflow as tf\nmodel = tf.keras.models.load_model('src/models/deep_learning/lstm_model.keras')\nprobs = model(tf.constant(['i am feeling really anxious about tomorrow'])).numpy()\npredicted_class = probs.argmax(axis=1)[0]",
+    "notes": [
+        "The saved model already contains the TextVectorization layer.",
+        "The deployment code can load lstm_model.keras directly.",
+        "Confirm the TensorFlow/Keras version in the deployment environment if a model loading error occurs.",
+        "Performance values correspond to the latest test run recorded for this model."
+    ]
+}
