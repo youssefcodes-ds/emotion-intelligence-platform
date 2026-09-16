@@ -2,6 +2,7 @@
 Model Loader - Load trained TensorFlow/Keras models
 """
 import os
+import pickle
 from pathlib import Path
 from typing import Dict, Optional, Tuple, Any
 import numpy as np
@@ -42,6 +43,26 @@ class ModelLoader:
         
         # Load models
         self._load_all_models()
+
+    def _restore_vocabulary(self, model):
+        """Restore the TextVectorization vocabulary lost in .h5 save/load.
+
+        The legacy HDF5 format does not reliably persist the lookup table
+        backing a TextVectorization layer, so a model reloaded from .h5
+        raises 'Table not initialized' at prediction time. export_models.py
+        saves the fitted vocabulary separately to vocabulary.pkl for exactly
+        this reason - reapply it here after loading.
+        """
+        vocab_path = self.model_dir / "vocabulary.pkl"
+        if not vocab_path.exists():
+            print(f"⚠ vocabulary.pkl not found at {vocab_path} — predictions will fail")
+            return
+        with open(vocab_path, "rb") as f:
+            vocab = pickle.load(f)
+        for layer in model.layers:
+            if hasattr(layer, "set_vocabulary"):
+                layer.set_vocabulary(vocab)
+                print(f"  ✓ restored vocabulary ({len(vocab)} tokens) on layer '{layer.name}'")
     
     def _load_all_models(self):
         """Load all available models from disk"""
@@ -59,6 +80,7 @@ class ModelLoader:
         if embedding_path.exists():
             try:
                 self.models['embedding_based'] = tf.keras.models.load_model(str(embedding_path))
+                self._restore_vocabulary(self.models['embedding_based'])
                 print(f"✓ Loaded Embedding-Based MLP: {embedding_path}")
             except Exception as e:
                 print(f"✗ Failed to load Embedding model: {e}")
@@ -70,6 +92,7 @@ class ModelLoader:
         if lstm_path.exists():
             try:
                 self.models['lstm'] = tf.keras.models.load_model(str(lstm_path))
+                self._restore_vocabulary(self.models['lstm'])
                 print(f"✓ Loaded LSTM: {lstm_path}")
             except Exception as e:
                 print(f"✗ Failed to load LSTM model: {e}")
@@ -81,6 +104,7 @@ class ModelLoader:
         if gru_path.exists():
             try:
                 self.models['gru'] = tf.keras.models.load_model(str(gru_path))
+                self._restore_vocabulary(self.models['gru'])
                 print(f"✓ Loaded GRU: {gru_path}")
             except Exception as e:
                 print(f"✗ Failed to load GRU model: {e}")
